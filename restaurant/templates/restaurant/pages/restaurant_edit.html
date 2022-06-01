@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+
+
+{% block title %}Edit - {% endblock title %}
+
+{% block content %}
+    {# Load the tag library #}
+    {% load bootstrap4 %}
+
+    {# Load CSS and JavaScript #}
+ 
+    {% bootstrap_javascript jquery='full' %}
+    
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+
+      <section class="new-restaurant">
+        <form action="" method="post" class="create-restaurant">
+          {% csrf_token %}
+              <div class="new-restaurant">
+                <input type="text" name="name" class="menu-restaurant__input"></input>
+                <input type="submit" value="Edit Restaurant" class="menu-restaurant__confirm"/>
+              </div>
+        </form>        
+      </section>
+{% endblock content %}

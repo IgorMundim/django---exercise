@@ -1,0 +1,58 @@
+{% extends 'global/base.html' %}
+
+
+{% block title %}Home | {% endblock title %}
+
+{% block content %}
+    {# Load the tag library #}
+    {% load bootstrap4 %}
+
+    {# Load CSS and JavaScript #}
+ 
+    {% bootstrap_javascript jquery='full' %}
+    
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+
+      <section class="new-restaurant">
+        <form action="" method="post" class="create-restaurant">
+          {% csrf_token %}
+              <div class="new-restaurant">
+                <input type="text" name="name" class="menu-restaurant__input"></input>
+                <input type="submit" value="Create Restaurant" class="menu-restaurant__confirm"/>
+              </div>
+        </form>        
+      </section>
+      <section class="restaurants">
+        <ul class="restaurants-list">
+
+          <li class="restaurants-list__item">
+            <a class="restaurants-list__link"> 
+              
+            </a>
+            <span class="restaurant-list__name" src="">aaaaaaaaaaaaaaaaa</span>
+            <div class="restaurants-list__crud">
+              <span class="restaurants-list__menu">Menu</span>
+              <span class="restaurants-list__edit">Edit</span>
+              <span class="restaurants-list__delete">Delete</span>
+            </div>
+          </li>
+          <li class="restaurants-list__item">
+            <a class="restaurants-list__link"> 
+              <img class="restaurants-list__img" src="https://img.freepik.com/fotos-gratis/3d-rendem-de-uma-mesa-de-madeira-com-uma-imagem-defocussed-de-um-barco-em-um-lago_1048-3432.jpg?w=2000" alt="" />
+            </a>
+            <span class="restaurant-list__name" src="">aaaaaaaaaaaaaaaaa</span>
+            <div class="restaurants-list__crud">
+              <span class="restaurants-list__menu">Menu</span>
+              <span class="restaurants-list__edit">Edit</span>
+              <span class="restaurants-list__delete">Delete</span>
+            </div>
+          </li>
+
+        </ul>
+
+
+      </section>
+ 
+  
+{% endblock content %}

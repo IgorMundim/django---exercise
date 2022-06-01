@@ -1,0 +1,74 @@
+{% extends 'global/base.html' %}
+{% comment %} category,  name, description, price {% endcomment %}
+
+{% block title %}Menu Items | {% endblock title %}
+
+{% block content %}
+    {# Load the tag library #}
+    {% load bootstrap4 %}
+
+    {# Load CSS and JavaScript #}
+ 
+    {% bootstrap_javascript jquery='full' %}
+    
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+
+       {% comment %} category,  name, description, price {% endcomment %}
+      <section class="new-menu">
+        <form action="" method="post" class="">
+          {% csrf_token %}
+              <div class="new-menu__item">
+                <input type="text" name="category" class="new-menu__category" placeholder=" Category"></input>
+                <input type="text" name="name" class="new-menu__name" placeholder=" Name"></input> 
+                <input type="text" name="description" class="new-menu__description" placeholder=" Description"></input> 
+                <input type="number" name="price" class="new-menu__price" placeholder=" Price"></input> 
+                <label for="media" class="new-menu__media">Upload</label>
+                <input type="file" name="media" id="media">
+                
+                <input type="submit" value="Create menu item" class="new-menu__confirm"/>
+              </div>
+        </form>        
+      </section>
+      <section class="restaurants-menu">
+        <ul class="restaurants-list">
+
+          <li class="restaurants-list__item">
+            <a class="restaurants-list__link"> 
+              
+            </a>
+           
+            <div class="restaurant-menu__info">
+              <span class="" src=""><b>Category:</b> Extra</span><br />
+              <span class="" src=""><b>Name:</b> Lorem</span><br />
+              <span class="restaurant-menu__description" src=""><b>Description:</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span><br />
+              <span class="" src=""><b>Price:</b> R$20</span><br />
+            </div>
+            <div class="restaurants-menu__crud">
+              <span class="restaurants-menu__edit">Edit</span>
+              <span class="restaurants-menu__delete">Delete</span>
+            </div>
+          </li>
+          <li class="restaurants-list__item">
+            <a class="restaurants-list__link"> 
+              <img class="restaurants-list__img" src="https://img.freepik.com/fotos-gratis/3d-rendem-de-uma-mesa-de-madeira-com-uma-imagem-defocussed-de-um-barco-em-um-lago_1048-3432.jpg?w=2000" alt="" />
+            </a>
+            {% comment %} category,  name, description, price {% endcomment %}
+            <div class="restaurant-menu__info">
+              <span class="" src=""><b>Category:</b> Extra</span><br />
+              <span class="" src=""><b>Name:</b> Lorem</span><br />
+              <span class="restaurant-menu__description" src=""><b>Description:</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span><br />
+              <span class="" src=""><b>Price:</b> R$20</span><br />
+            </div>
+            <div class="restaurants-menu__crud">
+              <span class="restaurants-menu__edit">Edit</span>
+              <span class="restaurants-menu__delete">Delete</span>
+            </div>
+          </li>
+
+        </ul>
+
+
+      </section>
+
+{% endblock content %}
