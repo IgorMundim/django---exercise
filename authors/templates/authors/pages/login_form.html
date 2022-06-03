@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+
+
+{% block title %}New Register | {% endblock title %}
+
+{% block content %}
+<section>
+  <div class="page-user__title">
+    <span>Login</span>
+  </div>
+  <form action="{{form_action}}" method='POST'  >
+      {% csrf_token %}
+      <div class="content-register">
+        <div class="content-register__item">
+        {% for field in form %}  
+            {{ field }}
+        <span> {{ field.errors }}</span>
+        {% endfor %}
+        <button type="submit" class="content-register__send">Login</button>
+      </div>
+        
+    </div>
+  </form>  
+</section>
+
+{% endblock content %}

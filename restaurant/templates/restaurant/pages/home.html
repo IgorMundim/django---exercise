@@ -25,19 +25,24 @@
       </section>
       <section class="restaurants">
         <ul class="restaurants-list">
-
+          {% for restaurant in restaurants %}
           <li class="restaurants-list__item">
             <a class="restaurants-list__link"> 
               
             </a>
-            <span class="restaurant-list__name" src="">aaaaaaaaaaaaaaaaa</span>
+            <span class="restaurant-list__name" src="">{{restaurant.name}}</span>
             <div class="restaurants-list__crud">
-              <span class="restaurants-list__menu">Menu</span>
-              <span class="restaurants-list__edit">Edit</span>
-              <span class="restaurants-list__delete">Delete</span>
+              <a class="restaurants-list__menu" href="{{action_menu}}">Menu</a>
+              <a class="restaurants-list__edit" href="{{action_edit}}">Edit</a>
+              <a class="restaurants-list__delete" href="{{action_delete}}">Delete</a>
             </div>
           </li>
-          <li class="restaurants-list__item">
+          {% empty %}
+              <div class="center m-y">
+                  <h1>No restaurant found here!</h1>
+              </div>
+          {% endfor %}
+          {% comment %} <li class="restaurants-list__item">
             <a class="restaurants-list__link"> 
               <img class="restaurants-list__img" src="https://img.freepik.com/fotos-gratis/3d-rendem-de-uma-mesa-de-madeira-com-uma-imagem-defocussed-de-um-barco-em-um-lago_1048-3432.jpg?w=2000" alt="" />
             </a>
@@ -47,7 +52,7 @@
               <span class="restaurants-list__edit">Edit</span>
               <span class="restaurants-list__delete">Delete</span>
             </div>
-          </li>
+          </li> {% endcomment %}
 
         </ul>
 
