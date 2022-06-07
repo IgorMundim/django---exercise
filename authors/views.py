@@ -28,8 +28,8 @@ def register_create(request):
 
     if form.is_valid():
         user = form.save(commit=False)
-        # user.set_password(user.password)
-        # user.save()
+        user.set_password(user.password)
+        user.save()
         del(request.session['register_form_data'])
         return redirect(reverse('authors:login'))
 

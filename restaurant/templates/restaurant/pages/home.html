@@ -13,7 +13,7 @@
     
     {# Display django.contrib.messages as Bootstrap alerts #}
     {% bootstrap_messages %}
-
+      <a href="{% url 'authors:register' %}">Create new user</a>
       <section class="new-restaurant">
         <form action="{% url 'restaurant:restaurant_new' %}" method="post" class="create-restaurant" enctype="multipart/form-data">
           {% csrf_token %}

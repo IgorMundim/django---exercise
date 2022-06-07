@@ -18,7 +18,7 @@ class Restaurant(models.Model):
 class MenuItem(models.Model):
     category = models.CharField(max_length=65)
     name = models.CharField(max_length=65)
-    description = models.CharField(max_length=255)
+    description = models.CharField(max_length=1000)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     cover = models.ImageField(
         upload_to='restaurant/covers/%Y/%m/%d/', blank=True, default='')
