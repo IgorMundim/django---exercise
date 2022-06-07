@@ -15,11 +15,18 @@
     {% bootstrap_messages %}
 
       <section class="new-restaurant">
-        <form action="" method="post" class="create-restaurant">
+        <form action="{% url 'restaurant:restaurant_new' %}" method="post" class="create-restaurant" enctype="multipart/form-data">
           {% csrf_token %}
               <div class="new-restaurant">
                 <input type="text" name="name" class="menu-restaurant__input"></input>
+                <label for="cover" class="new-menu__media">Send Image</label>
+                <input type="file" name="cover" id="cover"> 
+                {% comment %} {% for field in form %}  
+                {{ field }}
+                <span> {{ field.errors }}</span>
+                {% endfor %} {% endcomment %}
                 <input type="submit" value="Create Restaurant" class="menu-restaurant__confirm"/>
+
               </div>
         </form>        
       </section>
@@ -27,14 +34,16 @@
         <ul class="restaurants-list">
           {% for restaurant in restaurants %}
           <li class="restaurants-list__item">
-            <a class="restaurants-list__link"> 
-              
+            <a class="restaurants-list__link" src=""> 
+              {% if restaurant.cover %}
+                <img class="restaurants-list__img" src="{{ restaurant.cover.url }}" alt="" />
+              {% endif %}
             </a>
             <span class="restaurant-list__name" src="">{{restaurant.name}}</span>
             <div class="restaurants-list__crud">
-              <a class="restaurants-list__menu" href="{{action_menu}}">Menu</a>
-              <a class="restaurants-list__edit" href="{{action_edit}}">Edit</a>
-              <a class="restaurants-list__delete" href="{{action_delete}}">Delete</a>
+              <a class="restaurants-list__menu" href="{% url 'restaurant:menu' restaurant.id %}">Menu</a>
+              <a class="restaurants-list__edit" href="{% url 'restaurant:restaurant_edit' restaurant.id %}">Edit</a>
+              <a class="restaurants-list__delete" href="{% url 'restaurant:restaurant_delete' restaurant.id %}">Delete</a>
             </div>
           </li>
           {% empty %}

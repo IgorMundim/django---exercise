@@ -15,10 +15,12 @@
     {% bootstrap_messages %}
 
       <section class="new-restaurant">
-        <form action="" method="post" class="create-restaurant">
+        <form action="" method="post" class="create-restaurant" enctype="multipart/form-data">
           {% csrf_token %}
               <div class="new-restaurant">
-                <input type="text" name="name" class="menu-restaurant__input"></input>
+                <input type="text" name="name" class="menu-restaurant__input" value="{{restaurant.name}}"></input>               
+                <label for="cover" class="new-menu__media">Send Image</label>
+                <input type="file" name="cover" id="cover" >
                 <input type="submit" value="Edit Restaurant" class="menu-restaurant__confirm"/>
               </div>
         </form>        

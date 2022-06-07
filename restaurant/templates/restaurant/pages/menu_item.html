@@ -16,44 +16,49 @@
 
        {% comment %} category,  name, description, price {% endcomment %}
       <section class="new-menu">
-        <form action="" method="post" class="">
+        <form action="{% url 'restaurant:menu' restaurant_id %}" method="post" class="" enctype="multipart/form-data">
           {% csrf_token %}
               <div class="new-menu__item">
                 <input type="text" name="category" class="new-menu__category" placeholder=" Category"></input>
                 <input type="text" name="name" class="new-menu__name" placeholder=" Name"></input> 
                 <input type="text" name="description" class="new-menu__description" placeholder=" Description"></input> 
                 <input type="number" name="price" class="new-menu__price" placeholder=" Price"></input> 
-                <label for="media" class="new-menu__media">Upload</label>
-                <input type="file" name="media" id="media">
-                
+                <label for="cover" class="new-menu__media">Upload</label>
+                <input type="file" name="cover" id="cover">
                 <input type="submit" value="Create menu item" class="new-menu__confirm"/>
               </div>
         </form>        
       </section>
       <section class="restaurants-menu">
         <ul class="restaurants-list">
-
+          {% for menu_item in menu_itens  %}
           <li class="restaurants-list__item">
             <a class="restaurants-list__link"> 
-              
-            </a>
-           
+              {% if menu_item.cover %}
+              <img class="restaurants-list__img" src="{{ menu_item.cover.url }}" alt="" />
+
+              {% endif %}     
+            </a> 
             <div class="restaurant-menu__info">
-              <span class="" src=""><b>Category:</b> Extra</span><br />
-              <span class="" src=""><b>Name:</b> Lorem</span><br />
-              <span class="restaurant-menu__description" src=""><b>Description:</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span><br />
-              <span class="" src=""><b>Price:</b> R$20</span><br />
+              <span class="" src=""><b>Category:</b> {{menu_item.category}}</span><br />
+              <span class="" src=""><b>Name:</b> {{menu_item.name}}</span><br />
+              <span class="restaurant-menu__description" src=""><b>Description:</b> {{menu_item.description}} </span><br />
+              <span class="" src=""><b>Price:</b> {{menu_item.price}}</span><br />
             </div>
             <div class="restaurants-menu__crud">
-              <span class="restaurants-menu__edit">Edit</span>
-              <span class="restaurants-menu__delete">Delete</span>
+              <a class="restaurants-menu__edit" href="{% url 'restaurant:menu_edit' menu_item.id %}">Edit</a>
+              <a class="restaurants-menu__delete" href="{% url 'restaurant:menu_delete' menu_item.id %}">Delete</a>
             </div>
           </li>
-          <li class="restaurants-list__item">
+          {% empty %}
+          <div class="center m-y">
+              <h1>No item found here!</h1>
+          </div>
+          {% endfor %}
+          {% comment %} <li class="restaurants-list__item">
             <a class="restaurants-list__link"> 
               <img class="restaurants-list__img" src="https://img.freepik.com/fotos-gratis/3d-rendem-de-uma-mesa-de-madeira-com-uma-imagem-defocussed-de-um-barco-em-um-lago_1048-3432.jpg?w=2000" alt="" />
             </a>
-            {% comment %} category,  name, description, price {% endcomment %}
             <div class="restaurant-menu__info">
               <span class="" src=""><b>Category:</b> Extra</span><br />
               <span class="" src=""><b>Name:</b> Lorem</span><br />
@@ -64,7 +69,7 @@
               <span class="restaurants-menu__edit">Edit</span>
               <span class="restaurants-menu__delete">Delete</span>
             </div>
-          </li>
+          </li> {% endcomment %}
 
         </ul>
 

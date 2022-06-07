@@ -14,15 +14,15 @@
     {# Display django.contrib.messages as Bootstrap alerts #}
     {% bootstrap_messages %}
     <section class="new-menu">
-      <form action="" method="post" class="">
+      <form action="" method="post" class="" enctype="multipart/form-data">
         {% csrf_token %}
             <div class="new-menu__item">
-              <input type="text" name="category" class="new-menu__category" placeholder=" Category"></input>
-              <input type="text" name="name" class="new-menu__name" placeholder=" Name"></input> 
-              <input type="text" name="description" class="new-menu__description" placeholder=" Description"></input> 
-              <input type="number" name="price" class="new-menu__price" placeholder=" Price"></input> 
-              <label for="media" class="new-menu__media">Upload</label>
-              <input type="file" name="media" id="media">
+              <input type="text" name="category" value="{{menu_item.category}}" class="new-menu__category" placeholder=" Category"></input>
+              <input type="text" name="name" value="{{menu_item.name}}" class="new-menu__name" placeholder=" Name"></input> 
+              <input type="text" name="description" value="{{menu_item.description}}" class="new-menu__description" placeholder=" Description"></input> 
+              <input type="number" name="price" value="{{menu_item.price}}" class="new-menu__price" placeholder=" Price"></input> 
+              <label for="cover" class="new-menu__media">Upload</label>
+              <input type="file" name="cover" id="cover">
               
               <input type="submit" value="Edit menu item" class="new-menu__confirm"/>
             </div>

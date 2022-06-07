@@ -6,6 +6,8 @@ from django.db import models
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=65)
+    cover = models.ImageField(
+        upload_to='restaurant/covers/%Y/%m/%d/', blank=True, default='')
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True)
 
