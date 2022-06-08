@@ -1,0 +1,386 @@
+
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-size: 1.6rem;
+  }
+  
+a {
+  text-decoration: none;
+  border: none;
+}
+img {
+  border: none;
+}
+ul{
+	list-style-type: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.nav-menu{
+  height: 5rem;
+  position: relative;
+  background-color: black;
+}
+.nav-menu__item {
+  
+  height: 2.8rem;
+  width: 15rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: auto;
+  cursor: pointer;
+
+}
+
+.nav_menu__text{
+  display: block;
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+  
+}
+
+.create-restaurant {
+  height:  60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-restaurant__confirm{
+  background-color: black;
+  color: white;
+  height: 3rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+  transition: 0.1s;
+}
+.menu-restaurant__confirm:hover{
+  background-color: yellow;
+  color: black;
+  height: 3rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+   
+}
+.menu-restaurant__input {
+  height: 3rem;
+  width: 30rem;
+}
+
+.restaurants-list__item {
+  display: block;
+  margin: 0 2rem 6rem;
+ 
+}
+
+.restaurants-list__link{
+  display: block;
+  height: 25rem;
+  width: 40rem;
+}
+.restaurants-list__img {
+  height: 25rem;
+  width: 40rem;
+  display: block;
+  
+}
+
+.restaurants-list{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  
+}
+.restaurants-list__item{
+  position: relative;
+  
+}
+.restaurants-list__img {
+  border-radius: 0.5rem;
+
+  display: block;
+}
+.restaurant-list__name {
+  position:absolute;
+  background-color: rgba(255,255,255,.6);
+  bottom: 5rem;
+  left: 0;
+  right: 0;
+  font-size: 3rem;
+  text-align: center;
+}
+.restaurants-list__crud {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+  margin-top: 0.2rem;
+  cursor: pointer;
+ 
+}
+.restaurants-list__menu {
+  background-color: green;
+  color: white;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+
+}
+.restaurants-list__edit {
+  background-color: blue;
+  color: white;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.2rem;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+  
+}
+.restaurants-list__delete {
+  background-color: red;
+  color: white;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+  
+}
+
+.restaurants-list__menu:hover {
+  background-color: yellow;
+  color: black;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+
+}
+.restaurants-list__edit:hover {
+  background-color: yellow;
+  color: black;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.2rem;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+  
+}
+.restaurants-list__delete:hover {
+  background-color: yellow;
+  color: black;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+  
+}
+
+.restaurant-menu__info{
+  display: grid;
+  padding: 0.5rem;
+  width: 40rem;
+  font-size: 1.6rem;
+}
+.restaurant-menu__description {
+  text-align: justify;
+}
+
+.restaurants-menu {
+  margin-top: 2rem;
+  
+}
+
+.restaurants-menu__crud {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: center;
+  margin-top: 0.2rem;
+ 
+}
+.restaurants-menu__edit {
+  background-color: green;
+  color: white;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+  margin-right: 0.3rem;
+
+}
+
+.restaurants-menu__delete {
+  background-color: red;
+  color: white;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+  margin-left: 0.3rem;
+  
+}
+
+.restaurants-menu__edit:hover{
+  background-color: yellow;
+  color:black;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+  margin-right: 0.3rem;
+
+}
+
+.restaurants-menu__delete:hover {
+  background-color: yellow;
+  color:black;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  transition: 0.1s;
+  margin-left: 0.3rem;
+  
+}
+.new-menu {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  
+}
+.new-menu__item {
+
+}
+.new-menu__category{
+  height: 3rem;
+  width: 15rem;
+}
+.new-menu__name {
+  height: 3rem;
+  width: 15rem;
+}
+
+.new-menu__description{
+  height: 3rem;
+  width: 30rem;
+}
+.new-menu__price{
+  height: 3rem;
+  width: 10rem;
+}
+.new-menu__confirm{
+  background-color: black;
+  color: white;
+  height: 3rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+  transition: 0.1s;
+}
+.new-menu__confirm:hover{
+  background-color: yellow;
+  color: black;
+  height: 3rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+   
+}
+
+
+.new-menu__media {
+  
+  border-radius: 0.5rem;
+
+  padding: 0.5rem 0.5rem 0.6rem 0.5rem;
+  transition: 0.1s;
+  background-color: black;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.new-menu__media:hover {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem 0.6rem 0.5rem;
+  transition: 0.1s;
+  background-color: yellow;
+  border: solid 0.1rem black;
+  color: black;
+  cursor: pointer;
+}
+
+.user-register__firstname, .user-register__lastname, .user-register__username,
+ .user-register__email, .user-register__password{
+  height: 2.2rem;
+  margin-top: 0.5rem;
+  width: 30rem;
+}
+.content-register {
+  height: 50rem;
+  margin-top: 3rem;
+  position: relative;
+}
+.content-register__item {
+  height: 50rem;
+  width: 30rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin:auto;
+
+}
+
+.content-register__send {
+  margin-top: 1rem;
+  margin-left: 24.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem 0.6rem 1rem;
+  transition: 0.1s;
+  background-color: black;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.page-user__title {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  font-size: 3rem;
+}
